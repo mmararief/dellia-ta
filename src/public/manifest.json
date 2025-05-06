@@ -1,0 +1,80 @@
+{
+  "name": "Story Share - Berbagi Cerita dari Seluruh Dunia",
+  "short_name": "Story Share",
+  "description": "Platform berbagi cerita dari berbagai tempat di dunia",
+  "theme_color": "#2196f3",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "./",
+  "start_url": "./index.html",
+  "lang": "id-ID",
+  "prefer_related_applications": false,
+  "categories": ["social", "lifestyle", "entertainment"],
+  "icons": [
+    {
+      "src": "icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tambah Cerita Baru",
+      "url": "./#/add",
+      "description": "Tambahkan cerita baru ke aplikasi",
+      "icons": [
+        {
+          "src": "icons/favicon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Lihat Favorit",
+      "url": "./#/favorite",
+      "description": "Lihat cerita-cerita favorit Anda",
+      "icons": [
+        {
+          "src": "icons/favicon-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/dekstop-1.png",
+      "sizes": "1524x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/mobile-1.png",
+      "sizes": "392x740",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+
+@media screen and (width > 768px) {
+    .navigation-drawer {
+      min-height: auto;
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+      position: static;
+      box-shadow: none;
+      transform: translateX(0);
+    }
+  
+    .nav-list {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .nav-list li a {
+      color: white;
+      padding: 8px 16px;
+    }
+  
+    .nav-list li a:hover, .nav-list li a:focus {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  
+    .drawer-button {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .story-list {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .user-info {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .btn-add, .btn-logout {
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .container {
+      padding-inline: 15px;
+    }
+    
+    .home-page h1, .map-page h1, .add-story h1 {
+      font-size: 1.8rem;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+    }
+    
+    .story-list {
+      grid-template-columns: 1fr;
+    }
+    
+    .story-card {
+      max-width: 100%;
+    }
+    
+    .add-story-form {
+      padding: 20px;
+    }
+  }
+  
+  /* View Transitions */
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  ::view-transition-old(root) {
+    animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-out;
+  }
+  
+  ::view-transition-new(root) {
+    animation: 300ms cubic-bezier(0.4, 0, 0.2, 1) both fade-in;
+  }
