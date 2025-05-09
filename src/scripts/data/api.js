@@ -233,6 +233,12 @@ class Api {
         }
       }
       
+      // Ensure subscription is converted to JSON if it's a PushSubscription object
+      let subscriptionData = subscription;
+      if (subscription instanceof PushSubscription) {
+        subscriptionData = subscription.toJSON();
+      }
+      
       const response = await fetch(ENDPOINTS.NOTIFICATION_SUBSCRIBE, {
         method: 'POST',
         headers: {
@@ -240,10 +246,10 @@ class Api {
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          endpoint: subscription.endpoint,
+          endpoint: subscriptionData.endpoint,
           keys: {
-            p256dh: subscription.keys.p256dh,
-            auth: subscription.keys.auth
+            p256dh: subscriptionData.keys?.p256dh,
+            auth: subscriptionData.keys?.auth
           }
         }),
       });
@@ -276,6 +282,12 @@ class Api {
         throw new Error('Token tidak ditemukan, silakan login terlebih dahulu');
       }
       
+      // Ensure subscription is converted to JSON if it's a PushSubscription object
+      let subscriptionData = subscription;
+      if (subscription instanceof PushSubscription) {
+        subscriptionData = subscription.toJSON();
+      }
+      
       const response = await fetch(ENDPOINTS.NOTIFICATION_SUBSCRIBE, {
         method: 'DELETE',
         headers: {
@@ -283,7 +295,7 @@ class Api {
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          endpoint: subscription.endpoint
+          endpoint: subscriptionData.endpoint
         }),
       });
       
